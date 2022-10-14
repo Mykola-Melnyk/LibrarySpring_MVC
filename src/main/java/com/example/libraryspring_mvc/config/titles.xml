@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:com/example/libraryspring_mvc/config/beans.properties"/>
+    </bean>
+    <bean id="bookTitle" class="com.example.libraryspring_mvc.book.Title">
+        <property name="titleValue" value="${myFirstSpringBook.title}"/>
+    </bean>
+    <bean id="chapter1Title" class="com.example.libraryspring_mvc.book.Title">
+        <constructor-arg value="${myFirstSpringBook.chapter1.title}"/>
+    </bean>
+
+    <bean id="chapter2Title" class="com.example.libraryspring_mvc.book.Title">
+        <constructor-arg value="${myFirstSpringBook.chapter2.title}"/>
+    </bean>
+
+    <bean id="chapter3Title" class="com.example.libraryspring_mvc.book.Title">
+        <property name="titleValue" value="${myFirstSpringBook.chapter3.title}"/>
+    </bean>
+</beans>

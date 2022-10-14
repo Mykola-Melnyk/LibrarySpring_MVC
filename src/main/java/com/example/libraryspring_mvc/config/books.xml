@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:com/example/libraryspring_mvc/config/beans.properties"/>
+    </bean>
+    <bean id="myFirstSpringBook" class="com.example.libraryspring_mvc.book.Book">
+        <property name="isbn" value="1"/>
+        <property name="author" value="${myFirstSpringBook.author}"/>
+        <property name="title" ref="bookTitle"/>
+        <property name="chapters">
+            <list>
+                <ref bean="chapter1"/>
+                <ref bean="chapter2"/>
+                <ref bean="chapter3"/>
+            </list>
+        </property>
+    </bean>
+
+</beans>

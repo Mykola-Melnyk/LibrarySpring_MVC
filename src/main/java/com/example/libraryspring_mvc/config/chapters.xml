@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:com/example/libraryspring_mvc/config/beans.properties"/>
+    </bean>
+    <bean id="chapter1" class="com.example.libraryspring_mvc.book.Chapter">
+        <property name="number" value="1"/>
+        <property name="content" value="${myFirstSpringBook.chapter1.content}"/>
+        <property name="title" ref="chapter1Title"/>
+    </bean>
+
+    <!-- injecting the dependencies of chapter 2 using constructor by index -->
+    <bean id="chapter2" class="com.example.libraryspring_mvc.book.Chapter">
+        <constructor-arg index="0" value="2"/>
+        <constructor-arg index="1" ref="chapter2Title"/>
+        <constructor-arg index="2" value="${myFirstSpringBook.chapter2.content}"/>
+    </bean>
+
+    <!-- injecting the dependencies of chapter 3 using constructor by type -->
+    <bean id="chapter3" class="com.example.libraryspring_mvc.book.Chapter">
+        <constructor-arg type="int" value="3"/>
+        <constructor-arg type="com.example.libraryspring_mvc.book.Title" ref="chapter3Title"/>
+        <constructor-arg type="java.lang.String" value="${myFirstSpringBook.chapter3.content}"/>
+    </bean>
+</beans>
