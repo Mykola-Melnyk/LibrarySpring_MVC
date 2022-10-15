@@ -5,7 +5,7 @@
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
     <bean
             class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="location" value="classpath:com/example/libraryspring_mvc/config/beans.properties"/>
+        <property name="location" value="classpath:beans.properties"/>
     </bean>
     <bean id="myHandlerMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">

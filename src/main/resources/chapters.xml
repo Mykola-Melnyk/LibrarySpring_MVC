@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="location" value="classpath:com/example/libraryspring_mvc/config/beans.properties"/>
+        <property name="location" value="classpath:beans.properties"/>
     </bean>
     <bean id="chapter1" class="com.example.libraryspring_mvc.book.Chapter">
         <property name="number" value="1"/>

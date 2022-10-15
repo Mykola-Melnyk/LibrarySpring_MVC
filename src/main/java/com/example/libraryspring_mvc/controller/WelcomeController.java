@@ -10,6 +10,6 @@ public class WelcomeController extends AbstractController {
     protected ModelAndView handleRequestInternal(HttpServletRequest request,
                                                  HttpServletResponse response) throws Exception {
 
-        return new ModelAndView("welcome");
+        return new ModelAndView("Welcome");
     }
 }
