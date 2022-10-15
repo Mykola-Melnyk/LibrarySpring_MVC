@@ -12,7 +12,7 @@ public class DisplayBookTOCController extends AbstractController {
 
     @Override
     protected ModelAndView handleRequestInternal(HttpServletRequest request,
-                                                 HttpServletResponse response) throws Exception {
+                                                 HttpServletResponse response) {
         Book myBook = null;
         if(books != null && !books.isEmpty()){
             for(Book book : books){

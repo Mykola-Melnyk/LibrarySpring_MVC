@@ -12,7 +12,7 @@ public class ListBooksController extends AbstractController {
     private List<Book> books;
     @Override
     protected ModelAndView handleRequestInternal(HttpServletRequest request,
-                                                 HttpServletResponse response) throws Exception {
+                                                 HttpServletResponse response) {
         return new ModelAndView("listBooks","books",books);
     }
     public List<Book> getBooks() {

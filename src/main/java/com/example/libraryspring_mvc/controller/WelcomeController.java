@@ -8,7 +8,7 @@ import org.springframework.web.servlet.mvc.AbstractController;
 public class WelcomeController extends AbstractController {
     @Override
     protected ModelAndView handleRequestInternal(HttpServletRequest request,
-                                                 HttpServletResponse response) throws Exception {
+                                                 HttpServletResponse response) {
 
         return new ModelAndView("Welcome");
     }
